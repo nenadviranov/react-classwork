@@ -137,14 +137,9 @@ handleEditPerson(ix) {
                   firstName= {firstName}
                   lastName={lastName}
                   age={age}
+                  handleDeletePerson={() => this.handleDeletePerson(ix)}
+                  handleEditPerson={() => this.handleEditPerson(ix)}
                 />
-                <button onClick={() => this.handleDeletePerson(ix)}>
-                  Delete
-                </button>
-
-                <button onClick={() => this.handleEditPerson(ix)}>
-                  Edit
-                </button>
               </div>
             )
           })
