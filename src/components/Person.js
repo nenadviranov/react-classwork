@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 class Person extends React.Component {
 
     render() {
@@ -11,11 +12,11 @@ class Person extends React.Component {
               {this.props.lastName},
               {this.props.age}
           </p>
-          <button onClick={this.props.handleDeletePerson}>
+          <button onClick={this.props.handleDeletePerson} className="buttons">
             Delete
           </button>
 
-          <button onClick={this.props.handleEditPerson}>
+          <button onClick={this.props.handleEditPerson} className="buttons">
             Edit
           </button>
         </div>
