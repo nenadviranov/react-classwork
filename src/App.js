@@ -1,8 +1,20 @@
 import React from 'react';
 import Person from './components/Person'
-import Form from './components/Form'
 import './App.css';
 
+// const persons = [{
+//   firstName: 'John',
+//   lastName: 'Doe',
+//   age: 28,
+// }, {
+//   firstName: 'Ana',
+//   lastName: 'Weee',
+//   age: 24,
+// }, {
+//   firstName: 'Mikle',
+//   lastName: 'Jordan',
+//   age: 22,
+// }]
 class App extends React.Component {
 
   constructor(props) {
@@ -88,17 +100,35 @@ handleEditPerson(ix) {
 
   render() {
     return (
-      <div className='App'>
-        <Form 
-          firstName={this.state.person.firstName}
-          lastName={this.state.person.lastName}
-          age={this.state.person.age}
-          person={this.state.person}
-          onChangeFirstname={(e) => this.handlePersonChange('firstName', e.target.value)}
-          onChangeLastName={(e) => this.handlePersonChange('lastName', e.target.value)}
-          onChangeAge={(e) => this.handlePersonChange('age', e.target.value)}
-          handleSubmit={this.handleSubmit}
-        />
+      <div>
+        Hello world!
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            name="firstName" 
+            value={this.state.person.firstName}
+            onChange={(e) => this.handlePersonChange('firstName', e.target.value)}
+          />
+          <input 
+            type="text" 
+            name="lastName" 
+            value={this.state.person.lastName} 
+            onChange={(e) => this.handlePersonChange('lastName', e.target.value)}
+          />
+          <input 
+            type="text" 
+            name="age" 
+            value={this.state.person.age} 
+            onChange={(e) => this.handlePersonChange('age', e.target.value)}
+          />
+          <button type="submit">
+            {
+              !this.state.person.ix && this.state.person.ix !== 0 
+                ? 'Add'
+                : 'Update'
+            }
+          </button>
+        </form>
         {
           this.state.persons.map(({firstName, lastName, age}, ix) => {
             return (
